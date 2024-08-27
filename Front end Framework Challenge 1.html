@@ -1,0 +1,53 @@
+Front end Framework Challenge 1
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const QUOTEBANK = [
+                {
+                quote: "Do or do not. There is no try.",
+                author: "Yoda"
+            },
+                {
+                quote: "Dreams save us. Dreams lift us up and transform us",
+                author: "Superman"
+            },
+            {
+                quote: "I know what I have to do",
+                author: "Kylo Ren"
+            }
+        ];
+        window.onload = init;
+        function init(){
+            generateQuote()
+        };
+        function generateQuote(){
+            let quoteSize = QUOTEBANK.length;
+            let randomIndex = Math.floor(Math.random() * quoteSize);
+            let randomQuoteData = QUOTEBANK[randomIndex];
+
+            document.getElementById("text").innerText = randomQuoteData.quote;
+            document.getElementById("author").innerText = randomQuoteData.author;
+        }
+
+            </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-size: 2rem;
+        }
+    </style>
+    </head>
+<body>
+  <wrapper id="quote-box">
+    <div id="text"></div>
+        <h1 id="author">Random Quote Generator</h1>
+        <h2>Tweet at your own discretion</h2>
+    <button id="new-quote" onClick="generateQuote()">Click Me</button>
+    <a href="twitter.com/intent/tweet" id="tweet-quote" target="_blank">Tweet Me</a>
+  </wrapper> 
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+    </html>
